@@ -1,4 +1,4 @@
-# Adi — CTF Journey
+# Adi - CTF Journey
 
 Personal CTF writeup documentation. One file per challenge.
 
@@ -26,7 +26,7 @@ CTF-REPO/
 
 1. Copy `_Templates/writeup-template.md` into the right platform folder
 2. Rename it to the challenge name in kebab-case (e.g. `format-string-0.md`)
-3. Fill it out as you solve — document dead ends, not just the solution
+3. Fill it out as you solve 
 4. Commit when done
 
 ## Stats

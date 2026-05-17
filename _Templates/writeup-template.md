@@ -13,19 +13,19 @@
 
 ## Description
 
-> Paste the challenge prompt here exactly.
+> Paste challenge question
 
 ---
 
 ## Initial Observations
 
-What you noticed when you first looked at the challenge. What files/services are given. What the goal seems to be.
+What I noticed when I first looked at the challenge. What files/services were given. What the goal seems to be.
 
 ---
 
 ## Approach
 
-Walk through your thinking step by step. Include dead ends — they show methodology.
+Walk through my thinking step by step. Include dead ends 
 
 **Step 1 — ...**
 
@@ -37,13 +37,13 @@ Walk through your thinking step by step. Include dead ends — they show methodo
 
 ## Tools Used
 
-- tool name — why you used it
+- tool name, why I used it
 
 ---
 
 ## Key Finding
 
-The single insight that cracked it. One or two sentences max.
+Key insights on cracking it
 
 ---
 
@@ -59,4 +59,4 @@ commands or code that produced the flag
 
 ## Lessons Learned
 
-One or two things you will remember next time.
+What to remember for next time
