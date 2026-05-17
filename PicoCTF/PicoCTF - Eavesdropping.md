@@ -5,7 +5,7 @@
 | Platform   | PicoCTF    |
 | Category   | Forensics  |
 | Difficulty | Medium     |
-| Points     | 000        |
+| Points     | 300        |
 | Date       | 2026-05-17 |
 | Status     | Solved     |
 
