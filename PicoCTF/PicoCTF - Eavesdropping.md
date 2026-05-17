@@ -19,7 +19,7 @@
 
 ## Initial Observations
 
-Pcap provided, no context given. Name suggests someone's communication is being intercepted — look for cleartext data in TCP streams.
+Pcap provided, no context given. Name suggests someone's communication is being intercepted look for cleartext data in TCP streams.
 
 ---
 
@@ -37,7 +37,7 @@ The conversation handed over a full decryption command and confirmed a file tran
 openssl des3 -d -salt -in file.des3 -out file.txt -k supersecretpassword123
 ```
 
-**Step 2 —** Filtered for `tcp.port == 9002` to find the file transfer. Followed that TCP stream and confirmed binary data was being sent:
+**Step 2 -** Filtered for `tcp.port == 9002` to find the file transfer. Followed that TCP stream and confirmed binary data was being sent:
 
 ![port 9002 stream](../Screenshots/Pasted%20image%2020260517215252.png)
 
@@ -45,13 +45,13 @@ openssl des3 -d -salt -in file.des3 -out file.txt -k supersecretpassword123
 
 Changed stream view to **Raw** and saved as `file.des3`.
 
-**Step 3 —** Ran the decryption command from the conversation:
+**Step 3 -** Ran the decryption command from the conversation:
 
 ```bash
 openssl des3 -d -salt -in file.des3 -out file.txt -k supersecretpassword123
 ```
 
-Initial attempt failed with `bad magic number` — had accidentally saved the hex string as a text file instead of the actual binary. Converted correctly using:
+Initial attempt failed with `bad magic number` - had accidentally saved the hex string as a text file instead of the actual binary. Converted correctly using:
 
 ```bash
 echo "53616c7465645f5f..." | xxd -r -p > file.des3
@@ -69,23 +69,23 @@ echo "53616c7465645f5f..." | xxd -r -p > file.des3
 
 ## Tools Used
 
-- **Wireshark** — pcap analysis and TCP stream inspection
-- **xxd** — hex to binary conversion when raw save failed
-- **openssl** — decryption using the command found in cleartext stream
+- **Wireshark** - pcap analysis and TCP stream inspection
+- **xxd** - hex to binary conversion when raw save failed
+- **openssl** - decryption using the command found in cleartext stream
 
 ---
 
 ## Key Finding
 
-- The decryption command, password, and transfer port were all transmitted in plaintext — following the TCP stream gave everything needed without any guessing
+- The decryption command, password, and transfer port were all transmitted in plaintext - following the TCP stream gave everything needed without any guessing
 - `53616c7465645f5f` at the start of the hex data decodes to `Salted__`, confirming it was the correct OpenSSL-encrypted file before even attempting decryption
 
 ---
 
 ## Lessons Learned
 
-**1. Follow every TCP stream, not just the obvious ones**
-The flag came from reading a conversation, not from analysing packets technically. Cleartext streams are the first thing to check in any network forensics challenge.
+**1. Follow every TCP stream**
+The flag came from reading a conversation Cleartext streams are the first thing to check in any network forensics challenge.
 
 **2. Raw vs hex when extracting files from Wireshark**
-Saving a stream as hex and feeding it to a tool expecting binary will always fail. Set the stream view to Raw before saving, or convert with `xxd -r -p`.
+Saving a stream as hex and feeding it to a tool expecting binary fails. Set the stream view to Raw before saving, or convert with `xxd` or `openssl`.
