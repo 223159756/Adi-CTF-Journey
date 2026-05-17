@@ -37,6 +37,7 @@ Walk through my thinking step by step. Include dead ends
 
 
 
+![[Pasted image 20260517235244.png]]
 
 
 
