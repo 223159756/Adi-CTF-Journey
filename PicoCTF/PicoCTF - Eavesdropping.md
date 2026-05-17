@@ -13,8 +13,8 @@
 
 ## Description
 
-
- ![[Pasted image 20260517205650.png]]
+![[Pasted image 20260517214731.png]]
+ 
 
 ---
 
@@ -33,6 +33,21 @@ Walk through my thinking step by step. Include dead ends
 **Step 2 — ...**
 
 **Step 3 — ...**
+![[Pasted image 20260517214833.png]]
+![[Pasted image 20260517214817.png]]
+
+![[Pasted image 20260517215252.png]]
+
+![[Pasted image 20260517215309.png]]
+
+53616c7465645f5fd30c863ca650da1fff4fbe72a086457e63626beda615c692cdd27026ae7deea6d1e918b3d40a7f46
+
+
+
+
+
+
+
 
 ---
 
