@@ -5,7 +5,7 @@
 | Platform   | PicoCTF    |
 | Category   | Web        |
 | Difficulty | Easy       |
-| Points     | 000        |
+| Points     | 40         |
 | Date       | 2026-05-18 |
 | Status     | Solved     |
 
@@ -47,7 +47,11 @@ A web app with a form that takes a cookie name and returns a colour response bas
 
 ![flag](../Screenshots/Pasted%20image%2020260518152852.png)
 
-**Step 4 -** Back in Browser, sent GET `/check` with `Cookie: name=18`. Flag in the response.
+**Step 4 -** Back in the browser, set `name=18` in the cookie via dev tools and visited `/check`. Flag on the page.
+
+![browser cookie set to 18](../Screenshots/Pasted%20image%2020260518155426.png)
+
+![flag in browser](../Screenshots/Pasted%20image%2020260518155445.png)
 
 **Flag: `picoCTF{3v3ry1_l0v3s_c00k135_a4dadb49}`**
 
@@ -58,19 +62,20 @@ A web app with a form that takes a cookie name and returns a colour response bas
 - **Burp Suite Proxy** - intercept and inspect HTTP requests
 - **Burp Repeater** - manually modify and resend requests
 - **Burp Intruder** - brute force cookie values 0-28, sort by response length to find the outlier
+- **Inspect Element** - Using applications to change cookie value and test render for flags
 
 ---
 
 ## Key Finding
 
-Response length was the tell. Every valid cookie value returned ~2050 bytes, `name=18` returned 1360. Sorting Intruder results by length immediately flagged it - no need to read each response manually.
+Response length was the tell. Every valid cookie value returned ~2050 bytes, `name=18` returned 1360. looking at outlier resulted in the flag.
 
 ---
 
 ## Lessons Learned
 
-**1. Sort Intruder results by length, not status code**
-All responses returned 200 here. Length was the only differentiator. Always sort by length first when brute forcing web parameters.
+**1. Sort Intruder results by length**
+All responses returned 200 here. Length was the only differentiator, sort by length first when brute forcing web parameters.
 
 **2. Repeater before Intruder**
-Manually confirming the right endpoint and request format in Repeater before running Intruder saves time. Sending Intruder at the wrong endpoint wastes the run.
+Manually confirming the right endpoint and request format in Repeater before running Intruder saved time.
