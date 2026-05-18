@@ -33,6 +33,41 @@ Walk through my thinking step by step. Include dead ends
 
 **Step 3 — ...**
 
+
+
+
+
+
+
+
+![[Pasted image 20260518151451.png]]
+
+
+
+![[Pasted image 20260518151357.png]]
+
+
+![[Pasted image 20260518151551.png]]
+
+
+![[Pasted image 20260518151711.png]]
+
+![[Pasted image 20260518151926.png]]
+
+![[Pasted image 20260518151958.png]]
+
+
+![[Pasted image 20260518152057.png]]
+
+![[Pasted image 20260518151218.png]]
+
+
+picoCTF{3v3ry1_l0v3s_c00k135_a4dadb49}
+
+
+
+
+
 ---
 
 ## Tools Used
