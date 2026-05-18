@@ -25,7 +25,7 @@ A web app with a form that takes a cookie name and returns a colour response bas
 
 ## Approach
 
-**Step 1 -** Loaded the page and intercepted the form submission in Burp. The request had a cookie `name=-1` - clearly a default/unset value. The server was using this cookie to track state.
+**Step 1 -** Loaded the page and intercepted the form submission in Burp. The request had a cookie `name=-1` , clearly a default value. The server was using this cookie to track state.
 
 ![homepage form](../Screenshots/Pasted%20image%2020260518151451.png)
 
@@ -37,17 +37,17 @@ A web app with a form that takes a cookie name and returns a colour response bas
 
 ![valid cookie responses](../Screenshots/Pasted%20image%2020260518151711.png)
 
-**Step 3 -** Sent to Intruder, set `name` as the payload position, ran numbers 0-28 as a Sniper attack. Sorted by length - every response was around 2050 bytes except `name=18` which came back at 1360. That's the one.
+**Step 3 -** Sent to Intruder, set `name` as the payload position, ran numbers 0-28 as a Sniper attack. Sorted by length; every response was around 2050 bytes except `name=18` which came back at 1360. which seemed suspicious.
 
 ![Intruder setup](../Screenshots/Pasted%20image%2020260518151926.png)
 
 ![Intruder results - name=18 outlier](../Screenshots/Pasted%20image%2020260518151958.png)
 
-**Step 4 -** Back in Repeater, sent GET `/check` with `Cookie: name=18`. Flag in the response.
-
 ![name=18 flag response](../Screenshots/Pasted%20image%2020260518152057.png)
 
 ![flag](../Screenshots/Pasted%20image%2020260518152852.png)
+
+**Step 4 -** Back in Browser, sent GET `/check` with `Cookie: name=18`. Flag in the response.
 
 **Flag: `picoCTF{3v3ry1_l0v3s_c00k135_a4dadb49}`**
 
