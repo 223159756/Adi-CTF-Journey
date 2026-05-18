@@ -35,5 +35,5 @@ CTF-REPO/
 |-------------|--------|
 | PicoCTF     | 4      |
 | HackTheBox  | 0      |
-| TryHackMe   | 0      |
+| TryHackMe   | 1      |
 | Competition | 0      |
