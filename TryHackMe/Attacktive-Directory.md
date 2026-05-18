@@ -46,6 +46,9 @@ Room covers: Kerberos enumeration, AS-REP Roasting, Kerberoasting, Pass the Hash
 **Task 3 — Abusing Kerberos (AS-REP Roasting)**
 
 **Task 4 — Back to Basics (credential cracking)**
+![[Pasted image 20260518174500.png]]
+
+
 
 **Task 5 — Elevating Privileges (Kerberoasting)**
 
