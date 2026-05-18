@@ -59,6 +59,17 @@ Room covers: Kerberos enumeration, AS-REP Roasting, Kerberoasting, Pass the Hash
 ![[Pasted image 20260518180147.png]]
 
 **Task 6 — Impacket / secretsdump**
+![[Pasted image 20260518181123.png]]
+
+![[Pasted image 20260518181602.png]]
+
+
+![[Pasted image 20260518181738.png]]
+
+![[Pasted image 20260518181828.png]]
+
+
+
 
 **Task 7 — Flags**
 
