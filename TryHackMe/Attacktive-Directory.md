@@ -51,6 +51,12 @@ Room covers: Kerberos enumeration, AS-REP Roasting, Kerberoasting, Pass the Hash
 
 
 **Task 5 — Elevating Privileges (Kerberoasting)**
+![[Pasted image 20260518175537.png|697]]
+![[Pasted image 20260518175653.png]]
+![[Pasted image 20260518180230.png|697]]
+
+
+![[Pasted image 20260518180147.png]]
 
 **Task 6 — Impacket / secretsdump**
 
