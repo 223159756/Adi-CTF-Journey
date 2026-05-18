@@ -40,6 +40,8 @@ Room covers: Kerberos enumeration, AS-REP Roasting, Kerberoasting, Pass the Hash
 **Task 1 — Setup**
 
 **Task 2 — Enumeration (kerbrute)**
+![[Pasted image 20260518172342.png]]
+
 
 **Task 3 — Abusing Kerberos (AS-REP Roasting)**
 
