@@ -33,7 +33,7 @@ CTF-REPO/
 
 | Platform    | Solved |
 |-------------|--------|
-| PicoCTF     | 4      |
+| PicoCTF     | 5      |
 | HackTheBox  | 0      |
 | TryHackMe   | 1      |
 | Competition | 0      |
