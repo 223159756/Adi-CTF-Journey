@@ -27,7 +27,7 @@ The 8 problems cover the full RSA parameter chain: key generation, encryption, d
 
 ## Approach
 
-**Problem 1 — Given p and q, find n**
+**Problem 1 - Given p and q, find n**
 
 n is just the product of the two primes. Always feasible.
 
@@ -39,7 +39,7 @@ n = p * q
 
 ---
 
-**Problem 2 — Given p and n, find q**
+**Problem 2 - Given p and n, find q**
 
 n = p * q, so q = n / p. Integer division works exactly since p is a factor of n.
 
@@ -51,7 +51,7 @@ q = n // p
 
 ---
 
-**Problem 3 — Given e and a large n, find p and q**
+**Problem 3 - Given e and a large n, find p and q**
 
 Answered N. Factoring a large RSA modulus is computationally infeasible with current methods. Without p and q there is no way to proceed.
 
@@ -59,7 +59,7 @@ Answered N. Factoring a large RSA modulus is computationally infeasible with cur
 
 ---
 
-**Problem 4 — Given p and q, find totient(n)**
+**Problem 4 - Given p and q, find totient(n)**
 
 Euler's totient for an RSA modulus: phi(n) = (p-1)(q-1).
 
@@ -71,7 +71,7 @@ totient = (p - 1) * (q - 1)
 
 ---
 
-**Problem 5 — Given plaintext, e, and n, find ciphertext**
+**Problem 5 - Given plaintext, e, and n, find ciphertext**
 
 Standard RSA encryption. Modular exponentiation.
 
@@ -83,7 +83,7 @@ ciphertext = pow(plaintext, e, n)
 
 ---
 
-**Problem 6 — Given ciphertext, e=3, and n only, find plaintext**
+**Problem 6 - Given ciphertext, e=3, and n only, find plaintext**
 
 Answered N. With e=3 and a small message, the cube root attack applies: if m^3 < n, then ciphertext = m^3 with no modular reduction, and you can recover m by taking the integer cube root of ciphertext directly.
 
@@ -95,7 +95,7 @@ In this case `exact` was False, so the answer was N.
 
 ---
 
-**Problem 7 — Given p, q, and e, find d**
+**Problem 7 - Given p, q, and e, find d**
 
 d is the modular inverse of e modulo phi(n). Python 3.8+ handles this natively.
 
@@ -108,7 +108,7 @@ d = pow(e, -1, phi)
 
 ---
 
-**Problem 8 — Given p, ciphertext, e, and n, find plaintext**
+**Problem 8 - Given p, ciphertext, e, and n, find plaintext**
 
 Feasible. Having p means q = n // p, which gives phi(n), which gives d, which decrypts the ciphertext.
 
@@ -129,8 +129,8 @@ print(bytes.fromhex(hex(m)[2:]).decode())
 
 ## Tools Used
 
-- **Python** — all RSA arithmetic: `pow()` for modular exponentiation and modular inverse, integer division for key derivation
-- **gmpy2** — integer square root check for the cube root feasibility test in Problem 6
+- **Python** - all RSA arithmetic: `pow()` for modular exponentiation and modular inverse, integer division for key derivation
+- **gmpy2** - integer square root check for the cube root feasibility test in Problem 6
 
 ---
 
@@ -144,36 +144,7 @@ Problem 8 is the reverse trap: looks hard because there is no d given, but havin
 
 ## Solution
 
-```python
-# Problem 1
-n = p * q
-
-# Problem 2
-q = n // p
-
-# Problem 3 — N (infeasible)
-
-# Problem 4
-totient = (p - 1) * (q - 1)
-
-# Problem 5
-ciphertext = pow(plaintext, e, n)
-
-# Problem 6 — N (cube root not exact, modular reduction occurred)
-
-# Problem 7
-phi = (p - 1) * (q - 1)
-d = pow(e, -1, phi)
-
-# Problem 8
-q   = n // p
-phi = (p - 1) * (q - 1)
-d   = pow(e, -1, phi)
-m   = pow(ciphertext, d, n)
-print(bytes.fromhex(hex(m)[2:]).decode())
-```
-
-**Flag:** `picoCTF{wA8_th1s_is_7ust_4_cR4cK_0f_rsA_aHAhA}`
+**Flag:** `picoCTF{wA8_th4till3aGal..o5A36695F}`
 
 ---
 
