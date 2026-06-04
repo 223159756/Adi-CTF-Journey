@@ -15,11 +15,15 @@
 
 This vault uses for-loops and byte arrays. The source code for this vault is here: VaultDoor3.java
 
+![](../Screenshots/Pasted%20image%2020260604131118.png)
+
 ---
 
 ## Initial Observations
 
-Given a Java source file. Same structure as vault-door-1: strip the `picoCTF{...}` wrapper, pass the 32-character inner string to `checkPassword()`. This time there is no direct character comparison. Instead, the method uses four for-loops to copy characters from the input into a `buffer` array in scrambled positions, then checks if the buffer equals the hardcoded string `"jU5t_a_sna_3lpm16g041_u_4_m2r547"`.
+Given a Java source file. Same structure as vault-door-1: strip the `picoCTF{...}` wrapper, pass the 32-character inner string to `checkPassword()`. This time there is no direct character comparison. Instead, the method uses four for-loops to copy characters from the input into a `buffer` array in scrambled positions, then checks if the buffer equals the hardcoded string `"jU5t_a_sna_3lpm16g041_u_4_m2r547"`.  
+![](../Screenshots/Pasted%20image%2020260604131138.png)
+
 
 The scrambling happens to the input before comparison, so the hardcoded string is not the flag. The flag is whatever input, when scrambled by those loops, produces that string.
 
@@ -50,6 +54,7 @@ Each loop either copies straight (no change) or reverses a mapping using `23-i` 
 **Step 3 - Write the solver**
 
 Applied the exact same loop logic to `to_crack` instead of an unknown input:
+![](../Screenshots/Pasted%20image%2020260604131148.png)
 
 ```python
 to_crack = "jU5t_a_sna_3lpm16g041_u_4_m2r547"
@@ -85,7 +90,7 @@ Output is the flag inner string. Wrapped with `picoCTF{...}` and submitted.
 
 ## Key Finding
 
-The scrambling transformation is its own inverse. Each loop either does a straight copy or a symmetric reversal. Feeding the target string back through the same loops undoes the scramble and gives the original password directly. No brute force needed.
+The scrambling transformation is its own inverse. Each loop either does a straight copy or a symmetric reversal. Feeding the target string back through the same loops undoes the scramble and gives the original password directly.
 
 ---
 

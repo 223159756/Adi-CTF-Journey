@@ -14,12 +14,15 @@
 ## Description
 
 In the last challenge, you mastered octal (base 8), decimal (base 10), and hexadecimal (base 16) numbers, but this vault door uses a different change of base as well as URL encoding! The source code for this vault is here: VaultDoor5.java
+![](../Screenshots/Pasted%20image%2020260604131253.png)
 
 ---
 
 ## Initial Observations
 
 Given a Java source file with two encoding helper methods and a `checkPassword` function. The check applies two layers of encoding to the input before comparing against a hardcoded string:
+
+![](../Screenshots/Pasted%20image%2020260604131300.png)
 
 1. URL encode the password bytes (each byte becomes `%XX` in hex)
 2. Base64 encode the result of step 1
@@ -49,8 +52,9 @@ Reversing it: `expected → base64 decode → URL decode → password`
 
 The expected string in the Java source ends with a semicolon from the assignment statement. That semicolon is not part of the encoded value and needs to be stripped before decoding.
 
-**Step 3 - Write the solver**
-
+**Step 3 - Write the solver
+**
+![](../Screenshots/Pasted%20image%2020260604131312.png)
 ```python
 import base64
 
@@ -69,6 +73,7 @@ print('picoCTF{' + ascii_string + '}')
 ```
 
 **Step 4 - Run it**
+![](../Screenshots/Pasted%20image%2020260604131321.png)
 
 ```
 python3 vaultunlock.py
@@ -108,6 +113,7 @@ print('picoCTF{' + ascii_string + '}')
 
 **Flag:** `picoCTF{c0nv3rt1ng_fr0m_ba5e_64_42c6409b}`
 
+![](../Screenshots/Pasted%20image%2020260604131326.png)
 ---
 
 ## Lessons Learned

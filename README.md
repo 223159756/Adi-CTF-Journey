@@ -7,7 +7,7 @@ Personal CTF writeup documentation. One file per challenge.
 ```
 CTF-REPO/
 ├── _Templates/
-│   └── writeup-template.md     ← copy this for every new challenge
+│   └── writeup-template.md     
 ├── PicoCTF/
 │   └── challenge-name.md
 ├── HackTheBox/

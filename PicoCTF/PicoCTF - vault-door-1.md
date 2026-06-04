@@ -58,7 +58,15 @@ python vaultunlock.py
 picoCTF{d35cr4mbl3_tH3_cH4r4cT3r5_29e8d8}
 ```
 
+![](../Screenshots/Pasted%20image%2020260604131014.png)
+
 ---
+
+![](../Screenshots/Pasted%20image%2020260604131017.png)
+
+![](../Screenshots/Pasted%20image%2020260604131055.png)
+
+![](../Screenshots/Pasted%20image%2020260604131058.png)
 
 ## Tools Used
 
@@ -68,7 +76,7 @@ picoCTF{d35cr4mbl3_tH3_cH4r4cT3r5_29e8d8}
 
 ## Key Finding
 
-The password is fully present in the source code. The only obfuscation is that the character checks are written out of order. Reading them in index order reconstructs the password directly. No execution, no debugging, no decompilation needed.
+The password is fully present in the source code. The only obfuscation is that the character checks are written out of order. Reading them in index order reconstructs the password directly. Static analysis of the source is sufficient.
 
 ---
 

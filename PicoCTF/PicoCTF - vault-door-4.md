@@ -14,12 +14,14 @@
 ## Description
 
 This vault uses ASCII encoding for the password. The source code for this vault is here: VaultDoor4.java
+![](../Screenshots/Pasted%20image%2020260604131207.png)
 
 ---
 
 ## Initial Observations
 
 Given a Java source file. Same wrapper stripping as before. The `checkPassword` method this time converts the input string to a byte array with `getBytes()`, then compares it byte-by-byte against a hardcoded `myBytes` array. The myBytes array mixes three number bases and char literals across its 32 entries:
+![](../Screenshots/Pasted%20image%2020260604131221.png)
 
 - Positions 0-7: decimal integers
 - Positions 8-15: hexadecimal (`0x` prefix)
@@ -43,6 +45,7 @@ First attempt used `chr(int(num))` for the char entries, which converts `'2'` to
 Second issue: Python 3 does not accept Java-style octal literals like `0142`. Python 3 requires the `0o` prefix. Fixed by rewriting all octal values with `0o`.
 
 Corrected script:
+![](../Screenshots/Pasted%20image%2020260604131230.png)
 
 ```python
 myBytes = [
@@ -63,6 +66,7 @@ print('picoCTF{' + ''.join(flag) + '}')
 ```
 
 **Step 3 - Run it**
+![](../Screenshots/Pasted%20image%2020260604131237.png)
 
 ```
 python3 vaultunlock.py

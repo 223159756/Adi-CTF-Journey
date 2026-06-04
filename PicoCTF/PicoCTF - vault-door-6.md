@@ -13,6 +13,7 @@
 ## Description
 
 This vault uses an XOR encryption scheme. The source code for this vault is here: VaultDoor6.java
+![[Pasted image 20260604131420.png]]
 
 Hint: If X ^ Y = Z, then Z ^ Y = X. Write a program that decrypts the flag based on this fact.
 
@@ -22,6 +23,7 @@ Hint: If X ^ Y = Z, then Z ^ Y = X. Write a program that decrypts the flag based
 
 The Java source shows a `checkPassword` method that XORs each byte of the input against `0x55` and compares the result to a hardcoded `myBytes` array. The password must be exactly 32 characters.
 
+![[Pasted image 20260604131425.png]]
 ```java
 for (int i=0; i<32; i++) {
     if (((passBytes[i] ^ 0x55) - myBytes[i]) != 0) {
@@ -52,6 +54,7 @@ The flag bytes are recovered by XORing each value in `myBytes` against `0x55`.
 **Step 2 - Write the solver**
 
 XOR each byte against `0x55`, convert to a character, then wrap in `picoCTF{...}`.
+![[Pasted image 20260604131434.png]]
 
 ```python
 myBytes = [
@@ -73,6 +76,7 @@ print(flag)
 ```
 
 **Step 3 - Run it**
+![[Pasted image 20260604131441.png]]
 
 ```
 python3 vaultunlock.py
@@ -109,6 +113,7 @@ print('picoCTF{' + ''.join(flag) + '}')
 
 **Flag:** `picoCTF{n0t_mUcH_h4rD3r_tH4n_x0r_faae8b4}`
 
+![[Pasted image 20260604131447.png]]
 ---
 
 ## Lessons Learned
