@@ -31,7 +31,7 @@
 **Step 1 - **
 
 <!-- Screenshot if relevant -->
-
+![[Pasted image 20260604140645.png]]
 **Step 2 - **
 
 <!-- Screenshot if relevant -->
@@ -39,7 +39,7 @@
 **Step 3 - Run it**
 
 <!-- Screenshot of terminal output -->
-
+![[Pasted image 20260604140701.png]]
 ```
 python3 vaultunlock.py
 picoCTF{}
@@ -60,6 +60,7 @@ picoCTF{}
 ---
 
 ## Solution
+![[Pasted image 20260604140728.png]]
 
 ```python
 
